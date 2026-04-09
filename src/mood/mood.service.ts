@@ -6,11 +6,10 @@ import { PrismaClient, Mood } from '@prisma/client';
 export class MoodService {
   constructor(private prisma: PrismaService) {}
 
-  async createPost(dto: PostMoodDto): Promise<Mood> {
-    const { mood, ...rest } = dto;
+  async createPost(data: PostMoodDto): Promise<Mood> {
     return this.prisma.mood.create({
       data: {
-        ...dto,
+        ...data,
         publishedAt: new Date(),
       },
     });
