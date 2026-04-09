@@ -1,0 +1,3 @@
+-- AlterTable
+ALTER TABLE "Mood" ADD COLUMN     "moods" TEXT[],
+ALTER COLUMN "publishedAt" SET DEFAULT CURRENT_TIMESTAMP;
