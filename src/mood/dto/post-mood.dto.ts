@@ -1,11 +1,16 @@
-import { IsString } from 'class-validator';
+import { IsNumber, IsString, IsArray } from 'class-validator';
 
 export class PostMoodDto {
   @IsString()
-  author: string
-   @IsString()
-  moods: string[];
+  author: string;
+
+  @IsArray()
+  @IsString({ each: true })
+  habits: string[];
+
+  @IsNumber()
+  mood: number;
+
   @IsString()
   content: string;
- 
 }
