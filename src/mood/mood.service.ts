@@ -11,8 +11,7 @@ export class MoodService {
     const { mood, ...rest } = dto;
     return this.prisma.mood.create({
       data: {
-        ...rest,
-        moods: mood,
+        ...dto,
         publishedAt: new Date(),
       },
     });
