@@ -1,8 +1,7 @@
 import { Injectable } from '@nestjs/common';
 import { PrismaService } from 'src/prisma/prisma.service';
 import { PostMoodDto } from './dto/post-mood.dto';
-import { Mood } from 'src/generated/prisma/client';
-
+import { PrismaClient, Mood } from '@prisma/client';
 @Injectable()
 export class MoodService {
   constructor(private prisma: PrismaService) {}
